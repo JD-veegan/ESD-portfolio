@@ -776,71 +776,77 @@
             animation-delay: 0.6s;
         }
 
-        /* Modal styles for Details popup */
-        .modal-overlay {
-            position: fixed;
-            inset: 0;
-            background: rgba(0,0,0,0.6);
-            display: none;
-            align-items: center;
-            justify-content: center;
-            z-index: 2000;
-            padding: 20px;
-        }
+       /* Modal styles for Details popup */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    padding: 20px;
+}
 
-        .modal {
-            background: #0f0f1a;
-            color: var(--light);
-            width: 100%;
-            max-width: 720px;
-            border-radius: 12px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
-            padding: 22px;
-            position: relative;
-            border: 1px solid rgba(108,99,255,0.12);
-        }
+.modal {
+    background: #0f0f1a;
+    color: var(--light);
+    width: 100%;
+    max-width: 720px;
+    max-height: 80vh;            /* Limit modal height */
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+    padding: 22px;
+    position: relative;
+    border: 1px solid rgba(108,99,255,0.12);
+    display: flex;               /* Flex for modal body scroll */
+    flex-direction: column;
+}
 
-        .modal h3 {
-            margin-bottom: 8px;
-        }
+.modal h3 {
+    margin-bottom: 8px;
+}
 
-        .modal .modal-body {
-            color: var(--gray);
-            font-size: 0.95rem;
-            margin-bottom: 18px;
-        }
+.modal .modal-body {
+    color: var(--gray);
+    font-size: 0.95rem;
+    margin-bottom: 18px;
+    overflow-y: auto;            /* Enable scroll if content too long */
+    flex: 1;                     /* Take remaining vertical space */
+}
 
-        .modal .modal-body h4 {
-            margin: 10px 0 6px;
-            color: var(--light);
-            font-size: 1rem;
-        }
+.modal .modal-body h4 {
+    margin: 10px 0 6px;
+    color: var(--light);
+    font-size: 1rem;
+}
 
-        .modal .modal-body ul {
-            margin: 6px 0 12px 18px;
-            color: var(--gray);
-        }
+.modal .modal-body ul {
+    margin: 6px 0 12px 18px;
+    color: var(--gray);
+}
 
-        .modal .modal-body li {
-            margin-bottom: 6px;
-        }
+.modal .modal-body li {
+    margin-bottom: 6px;
+}
 
-        .modal .modal-actions {
-            display: flex;
-            justify-content: flex-end;
-            gap: 10px;
-        }
+.modal .modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
 
-        .modal .close-btn {
-            position: absolute;
-            top: 12px;
-            right: 12px;
-            background: transparent;
-            border: none;
-            color: var(--gray);
-            font-size: 1.1rem;
-            cursor: pointer;
-        }
+.modal .close-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: transparent;
+    border: none;
+    color: var(--gray);
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
     </style>
 </head>
 <body>
@@ -914,10 +920,13 @@
             <h2 class="section-title">Sessions Journey</h2>
             <div class="timeline">
                 <div class="timeline-item fade-in">
-                    <div class="week-number">Week 1</div>
+                    <div class="week-number">Session 1</div>
                     <div class="timeline-content">
                         <h3>Getting Started with Employability Skills</h3>
-                        <p>Introduced the purpose of building a learning portfolio and began reflecting on skills, goals, and career direction.</p>
+                        
+                        <p>Building foundational employability skills to enhance workplace readiness and career success.</p>
+                        <h5>Presented by Ms. Vishaliney Pirathap</h5>
+                        <h6>Lecturer of this module at Northern Uni</h6>
                                 <div class="timeline-image">
                                     <img src="./timelinephoto/Week1.jpg" alt="Introduction to Professional Skills" style="width:100%; height:100%; object-fit: cover;">
                                 </div>
@@ -925,44 +934,52 @@
                     </div>
                 </div>
                 <div class="timeline-item fade-in delay-1">
-                    <div class="week-number">Week 2</div>
+                    <div class="week-number">Session 2</div>
                     <div class="timeline-content">
-                        <h3>Creating a Great CV</h3>
-                        <p>Mastering the art of crafting compelling and professional resumes that stand out to employers.</p>
+                        <h3>Business Law / Company Law</h3>
+                        <p>Understanding business and company law to ensure legal, ethical, and compliant business operations.</p>
+                        <h5>Presented by Ms. Vaishnavy Shanmuganathan</h5>
+                        <h6>(Attorney-at-Law)</h6>
                         <div class="timeline-image">
-                            <img src="./timelinephoto/week2.jpg" alt="Creating a Great CV" style="width:100%; height:100%; object-fit: cover;">
+                            <img src="./timelinephoto/week2.jpeg" alt="Creating a Great CV" style="width:100%; height:100%; object-fit: cover;">
                         </div>
                         <div style="margin-top:12px;"><button class="btn details-btn" data-week="2">Details</button></div>
                     </div>
                 </div>
                 <div class="timeline-item fade-in delay-2">
-                    <div class="week-number">Week 3</div>
+                    <div class="week-number">Session 3</div>
                     <div class="timeline-content">
-                        <h3>Mock Interview</h3>
-                        <p>Developing confidence and professionalism in interview settings, including body language and communication.</p>
+                        <h3>Skills Required to Select a Career Path</h3>
+                        <p>Using self-assessment, research, and decision-making skills to choose the right career path.</p>
+                         <h5>Presented by Mr. Gajarthan Thevarajah</h5>
+                         <h6>Co-Founder & CEO of Bohar Solutions (Pvt) Ltd.</h6>
                         <div class="timeline-image">
-                            <img src="./timelinephoto/week3.jpg" alt="Mock Interview" style="width:100%; height:100%; object-fit: cover;">
-                            <img src="./timelinephoto/week3a.jpg" alt="Mock Interview - group" style="width:100%; height:100%; object-fit: contain; object-position: center;">
+                            <img src="./timelinephoto/week3.jpeg" alt="Mock Interview" style="width:100%; height:100%; object-fit: cover;">
+                            <img src="./timelinephoto/week3a.jpeg" alt="Mock Interview - group" style="width:100%; height:100%; object-fit: contain; object-position: center;">
                         </div>
                         <div style="margin-top:12px;"><button class="btn details-btn" data-week="3">Details</button></div>
                     </div>
                 </div>
                 <div class="timeline-item fade-in delay-3">
-                    <div class="week-number">Week 4</div>
+                    <div class="week-number">Session 4</div>
                     <div class="timeline-content">
-                        <h3>Interview Skills</h3>
-                        <p>Demonstrating effective interview skills to confidently communicate strengths and experience.</p>
+                        <h3>Job Roles in Non-IT Fields - Achieving Your Dream</h3>
+                        <p>Exploring diverse non-IT job roles and planning strategically to achieve your dream career.</p>
+                        <h5>Presented by Ms. Sarmila Sivaraja</h5>
+                        <h6>Google Women Tech makers Global Ambassador, CEO, 2SF Labs.</h6>
                         <div class="timeline-image">
-                            <img src="./timelinephoto/week4.jpg" alt="Interview Skills" style="width:100%; height:100%; object-fit: cover;">
+                            <img src="./timelinephoto/week4.jpeg" alt="Interview Skills" style="width:100%; height:100%; object-fit: cover;">
                         </div>
                         <div style="margin-top:12px;"><button class="btn details-btn" data-week="4">Details</button></div>
                     </div>
                 </div>
                 <div class="timeline-item fade-in">
-                    <div class="week-number">Week 5</div>
+                    <div class="week-number">Session 5</div>
                     <div class="timeline-content">
-                        <h3>Email Writing Skills</h3>
-                        <p>Writing professional emails and understanding workplace ethics and professional conduct.</p>
+                        <h3>Industry Attitudes and Expectations - HR Aspect</h3>
+                        <p>Understanding industry attitudes and HR expectations to align professional behavior, performance, and workplace success.</p>
+                        <h5>Presented by Mr. Mahinthan Subenthiran</h5>
+                        <h6>Group Manager - Human Resources, NU, MT, MW (SL)</h6>
                         <div class="timeline-image">
                             <img src="./timelinephoto/week5.jpg" alt="Email Writing Skills" style="width:100%; height:100%; object-fit: cover;">
                         </div>
@@ -970,10 +987,12 @@
                     </div>
                 </div>
                 <div class="timeline-item fade-in delay-1">
-                    <div class="week-number">Week 6</div>
+                    <div class="week-number">Session 6</div>
                     <div class="timeline-content">
-                        <h3>Professional Phone Call Etiquette</h3>
-                        <p>Maintaining professional phone call etiquette to communicate clearly, respectfully, and confidently.</p>
+                        <h3>Managing Stress & Building work-life Balance</h3>
+                        <p>Managing stress and building work-life balance to maintain well-being, focus, and productivity.</p>
+                        <h5>Presented by Ms.Kugashini Gunapagan</h5>
+                        <h6>Senior Student Counsellor at Northern Uni</h6>
                         <div class="timeline-image">
                             <img src="./timelinephoto/week6.jpg" alt="Professional Phone Call Etiquette" style="width:100%; height:100%; object-fit: cover;">
                         </div>
@@ -981,75 +1000,22 @@
                     </div>
                 </div>
                 <div class="timeline-item fade-in delay-2">
-                    <div class="week-number">Week 7</div>
+                    <div class="week-number">Session 7</div>
                     <div class="timeline-content">
-                        <h3>Dining Etiquette & Table Manners  </h3>
-                        <p>Practicing proper dining etiquette and table manners in professional settings.</p>
+                        <h3>UI/UX and Data Science and Industry Expectations  </h3>
+                        <p>Understanding UI/UX and data science industry expectations to deliver user-focused designs and data-driven solutions aligned with business needs.</p>
+                        <h5>Presented by Mr. Ravichelvan Kanagasabapathy</h5>
+                        <h6>Teacher at Jaffna Hindu College</h6>
                         <div class="timeline-image">
                             <img src="./timelinephoto/Week7.jpg" alt="Dining Etiquette & Table Manners" style="width:100%; height:100%; object-fit: cover;">
                         </div>
                         <div style="margin-top:12px;"><button class="btn details-btn" data-week="7">Details</button></div>
                     </div>
                 </div>
-                <div class="timeline-item fade-in delay-3">
-                    <div class="week-number">Week 8</div>
-                    <div class="timeline-content">
-                        <h3>Emotional Intelligence</h3>
-                        <p>Developing emotional intelligence to understand, manage, and respond to emotions effectively.</p>
-                        <div class="timeline-image">
-                            <img src="./timelinephoto/week8.jpg" alt="Emotional Intelligence" style="width:100%; height:100%; object-fit: cover;">
-                        </div>
-                        <div style="margin-top:12px;"><button class="btn details-btn" data-week="8">Details</button></div>
-                    </div>
-                </div>
-                <div class="timeline-item fade-in">
-                    <div class="week-number">Week 9</div>
-                    <div class="timeline-content">
-                        <h3>Portfolio Management</h3>
-                        <p>Managing portfolios to strategically allocate resources and achieve desired goals.</p>
-                        <div class="timeline-image">
-                            <img src="./timelinephoto/week9.jpg" alt="Portfolio Management" style="width:100%; height:100%; object-fit: cover;">
-                        </div>
-                        <div style="margin-top:12px;"><button class="btn details-btn" data-week="9">Details</button></div>
-                    </div>
-                </div>
-                <div class="timeline-item fade-in delay-1">
-                    <div class="week-number">Week 10</div>
-                    <div class="timeline-content">
-                        <h3>Writing & Identifying Abstracts</h3>
-                        <p>Writing and identifying concise, accurate abstracts for research and reports.</p>
-                        <div class="timeline-image">
-                            <img src="./timelinephoto/week10.jpg" alt="Writing & Identifying Abstracts" style="width:100%; height:100%; object-fit: cover;">
-                        </div>
-                        <div style="margin-top:12px;"><button class="btn details-btn" data-week="10">Details</button></div>
-                    </div>
-                </div>
-                <!-- Week 11 -->
-                <div class="timeline-item fade-in">
-                    <div class="week-number">Week 11</div>
-                    <div class="timeline-content">
-                        <h3>Meeting Terminology & Conduct</h3>
-                        <p>Understanding meeting terminology and conducting meetings effectively and professionally.</p>
-                        <div class="timeline-image">
-                            <img src="./timelinephoto/week11.jpg" alt="Meeting Terminology & Conduct" style="width:100%; height:100%; object-fit: cover;">
-                        </div>
-                        <div style="margin-top:12px;"><button class="btn details-btn" data-week="11">Details</button></div>
-                    </div>
-                </div>
-                <!-- Week 12 -->
-                <div class="timeline-item fade-in delay-1">
-                    <div class="week-number">Week 12</div>
-                    <div class="timeline-content">
-                        <h3>Food Festival (Final)</h3>
-                        <p>Applied learned professional and interpersonal skills through hands-on participation in organizing a university food festival.</p>
-                        <div class="timeline-image">
-                            <img src="./timelinephoto/week12.jpg" alt="Food Festival (Final)" style="width:100%; height:100%; object-fit: cover;">
-                            <img src="./timelinephoto/week12a.jpg" alt="Food Festival - team" style="width:100%; height:100%; object-fit: contain; object-position: center;">
-                        </div>
-                        <div style="margin-top:12px;"><button class="btn details-btn" data-week="12">Details</button></div>
-                    </div>
-                </div>
-                <!-- Week 13 removed -->
+             
+
+
+
             </div>
         </div>
     </section>
@@ -1063,28 +1029,28 @@
             </p>
             <div class="gallery-grid">
                 <div class="gallery-item fade-in">
-                    <div class="gallery-img"><img src="report1.jpg" style="width:100%; height:100%; object-fit: cover;"></div>
+                    <div class="gallery-img"><img src="./gallery/Week2.jpeg" style="width:100%; height:100%; object-fit: cover;"></div>
                 </div>
                 <div class="gallery-item fade-in delay-1">
-                    <div class="gallery-img"><img src="report2.jpg" style="width:100%; height:100%; object-fit: cover;"></div>
+                    <div class="gallery-img"><img src="./gallery/Week3.jpeg" style="width:100%; height:100%; object-fit: cover;"></div>
                 </div>
                 <div class="gallery-item fade-in delay-2">
-                    <div class="gallery-img"><img src="report3.jpg" style="width:100%; height:100%; object-fit: cover;"></div>
+                    <div class="gallery-img"><img src="./gallery/Week4.jpeg" style="width:100%; height:100%; object-fit: cover;"></div>
                 </div>
                 <div class="gallery-item fade-in delay-3">
-                    <div class="gallery-img"><img src="week5.jpg" style="width:100%; height:100%; object-fit: cover;"></div>
+                    <div class="gallery-img"><img src="./gallery/Week5.jpeg" style="width:100%; height:100%; object-fit: cover;"></div>
                 </div>
                 <div class="gallery-item fade-in">
-                    <div class="gallery-img"><img src="week8.jpg" style="width:100%; height:100%; object-fit: cover;"></div>
+                    <div class="gallery-img"><img src="./gallery/Week6.jpeg" style="width:100%; height:100%; object-fit: cover;"></div>
                 </div>
                 <div class="gallery-item fade-in delay-1">
-                    <div class="gallery-img"><img src="memory6.jpg" style="width:100%; height:100%; object-fit: cover;"></div>
+                    <div class="gallery-img"><img src="./gallery/Week7.jpeg" style="width:100%; height:100%; object-fit: cover;"></div>
                 </div>
                 <div class="gallery-item fade-in delay-2">
-                    <div class="gallery-img"><img src="report2.jpg" style="width:100%; height:100%; object-fit: cover;"></div>
+                    <div class="gallery-img"><img src="./gallery/Week8.jpeg" style="width:100%; height:100%; object-fit: cover;"></div>
                 </div>
                 <div class="gallery-item fade-in delay-3">
-                    <div class="gallery-img"><img src="class photo.jpg" style="width:100%; height:100%; object-fit: cover;"></div>
+                    <div class="gallery-img"><img src="./gallery/Week9.jpeg" style="width:100%; height:100%; object-fit: cover;"></div>
                 </div>
             </div>
         </div>
@@ -1273,7 +1239,7 @@
         // Details modal data and handlers
         const weekDetails = {
             "1": {
-                title: 'Getting Started with Employability Skills',
+                title: 'session 1: Getting Started with Employability Skills',
                 body: `
                     <h4>Session Overview</h4>
                     <p>This session launched the employability skills program by explaining the importance of a learning portfolio, outlining weekly activities, and encouraging self-reflection. Students assessed their current skills, strengths, and future aspirations while preparing for professional growth throughout the course.</p>
@@ -1290,139 +1256,217 @@
                         <li>Start With Self-Reflection - Assessing current abilities helps shape future improvement.</li>
                         <li>Set Goals Early - Clear goals guide learning and career development.</li>
                     </ul>
+					<h4>Resources Provided</h4>
+                    <ul>
+                        <li>Goal-setting templates</li>
+                        <li>Skills assessment worksheets</li>
+                    </ul>
                     <h4>What Was Learned</h4>
                     <p>This week helped students recognize where they currently stand in their professional journey and what they aim to achieve. It encouraged personal reflection, identification of improvement areas, and the beginning of a professional brand identity that will grow throughout the program.</p>
-                `
+					
+					<h4>Presented by </h4>
+                    <p>Ms. Vishaliney Pirathap - Lecturer of this module at Northern Uni</p>
+				
+				`
             },
             "2": {
-                title: 'Week 2 — Creating a Great CV',
+                title: 'session 2: Legal Foundations for Business & Entrepreneurship',
                 body: `
                     <h4>Session Overview</h4>
-                    <p>This session was all about crafting a perfect CV, which elements to put in and which to leave out so as to not spoil your chances with the employer.</p>
+                    <p>This session, led by Vaishnavy Shanmuganathan, provided an essential introduction to the legal landscape of business operations. It covered business structures, required documentation, compliance responsibilities, and intellectual property protection—equipping learners with legal awareness for professional and entrepreneurial success.</p>
                     <h4>Key Topics Covered</h4>
                     <ul>
-                        <li>Important Parts of a CV - Things that should be included for making a strong first impression.</li>
-                        <li>Common CV Mistakes - Mistakes to avoid when writing a CV.</li>
-                        <li>Formatting Your CV - Tips for organizing your CV to make it neat and easy to read.</li>
+                        <li>Business Structures - Understanding sole proprietorships, partnerships, and private limited companies.</li>
+                        <li>Essential Legal Documentation - Registrations, contracts, agreements, and compliance records.</li>
+						<li>Intellectual Property Rights (IPR) - Protecting ideas, branding, and creative work.</li>
+						<li>Compliance & Corporate Governance - Ethical, regulatory, and operational responsibilities.</li>
                     </ul>
                     <h4>Key Takeaways</h4>
                     <ul>
-                        <li>Clear and Brief - Your CV should be easy to read and focused on main talents and experience.</li>
-                        <li>Display Crucial Skills - Highlight skills and experiences most relevant to the role.</li>
-                        <li>Steer Clear of General Slip-Ups - Exclude unrelated personal details and avoid long paragraphs.</li>
+                        <li> Legal knowledge supports ethical and informed decision-making.</li>
+						 <li> Choosing the right business structure affects growth, taxation, and liability.</li>
+						  <li> Contracts and IPR are crucial for safeguarding business assets.</li>
+						   <li> Compliance ensures smooth operations and organizational integrity.</li>
+						
+					</ul>
+					<h4>Resources Provided</h4>
+                    <ul>
+                        <li>Summary of key business laws</li>
+                        <li>Templates for basic legal agreements</li>
                     </ul>
                     <h4>What Was Learned</h4>
-                    <p>The session revealed how crucial a CV is to target, what to include and what to avoid; we reviewed strong CV examples for inspiration.</p>
-                `
+                    <p>This session strengthened understanding of business and company law, emphasizing the importance of selecting appropriate legal structures, maintaining compliance, and protecting intellectual property. These skills are vital for entrepreneurs and professionals across industries.</p>
+					
+					<h4>Personal Reflection & Growth</h4>
+                    <ul>
+                        
+						  <li> “Understanding legal principles will help me navigate professional responsibilities with confidence and integrity.”</li>
+						
+					</ul>
+					<h4>Presented by </h4>
+                    <p>Ms. Vaishnavy Shanmuganathan - Attorney-at-Law</p>
+				
+				`
             },
             "3": {
-                title: 'Week 3 — Mock Interview',
+                title: 'session 3: Career Planning, Practical Skills & Entrepreneurial Inspiration',
                 body: `
                     <h4>Session Overview</h4>
-                    <p>This session provided a mock interview experience to help students present themselves, answer questions, and demonstrate technical and soft skills in a real interview setting.</p>
-                    <h4>Key Topics Covered</h4>
+                    <p>This week explored how students can take ownership of their career development by understanding market demands, building practical skills, and showcasing their work. A guest session by Mr. Gajarthan Thevarajah highlighted the transition from student life to becoming a CEO, emphasizing resilience, opportunity recognition, and networking in entrepreneurship. </p>
+					<h4>Key Topics Covered</h4>
                     <ul>
-                        <li>Interview Techniques - Answering common interview questions confidently.</li>
-                        <li>Showing Soft Skills - Demonstrating communication, problem-solving, and teamwork.</li>
-                        <li>Body Language - Importance of posture, eye contact, and nonverbal cues.</li>
+                        <li>Career Self-Assessment - Identifying skills, interests, and values for informed career choices.</li>
+						<li>Industry & Market Research - Understanding growth sectors and employer expectations</li>
+						<li>Practical Skill Building - Moving from theory to hands-on project development.</li>
+						<li>Entrepreneurial Journey - Challenges and lessons from starting a company.</li>
+						<li>Networking & Professional Branding - Building connections and online presence.</li>
+                        
                     </ul>
                     <h4>Key Takeaways</h4>
                     <ul>
-                        <li>Preparation is Key - Research the company and practise responses.</li>
-                        <li>Practice Makes Perfect - Mock interviews reduce anxiety.</li>
-                        <li>Self-Reflection - Learn from feedback to improve.</li>
+                        <li>Self-assessment helps define meaningful career direction.</li>
+						 <li>Researching market needs supports smarter skill development.</li>
+						  <li>Creating a GitHub portfolio strengthens technical credibility.</li>
+						   <li>Entrepreneurship requires resilience, problem-solving, and strong networks.</li>
+						
+                       
                     </ul>
                     <h4>What Was Learned</h4>
-                    <p>Improved understanding of interview preparation, communication skills, and how to make a positive impression on employers.</p>
-                `
+                    <p>Students recognized that practical experience is essential for employability and that showcasing work publicly—especially through GitHub—builds professional identity. The session reinforced the equal importance of soft and technical skills while offering real-world insight into entrepreneurship and business-building.</p>
+					<h4>Presented by </h4>
+                    <p>Presented by Mr. Gajarthan Thevarajah - Co-Founder & CEO of Bohar Solutions (Pvt) Ltd.</p>
+                
+				`
             },
             "4": {
-                title: 'Week 4 — Interview Skills',
+                title: 'session 4: Exploring Diverse Career Paths Beyond Traditional IT',
                 body: `
                     <h4>Session Overview</h4>
-                    <p>The session covered the interview process from preparation through dressing, body language, and making a strong first impression.</p>
-                    <h4>Key Topics Covered</h4>
+                    <p>In this session, Ms. Sarmila Sivaraja highlighted the wide range of opportunities available to tech graduates outside the conventional IT sector. The discussion focused on emerging roles in non-IT industries, the growing influence of technology across fields, and how students can market their strengths through personal branding and communication.</p>
+					<h4>Key Topics Covered</h4>
                     <ul>
-                        <li>Interview Preparation - Mental and practical readiness.</li>
-                        <li>Dressing Styles - Appropriate attire for interview situations.</li>
-                        <li>Body Language - Posture, gestures, and facial expressions.</li>
-                        <li>Interview Basics - Punctuality, attitude, and essentials.</li>
+                        <li>Alternative Career Paths for Tech Graduates - Marketing, consulting, entrepreneurship, product roles, and more.</li>
+						<li>Technology in Non-IT Industries - Finance, healthcare, education, media, manufacturing, etc.</li>
+						<li>Transferable & Cross-Functional Skills - Problem-solving, analytical thinking, teamwork, communication.</li>
+						<li>Personal Branding - Positioning yourself confidently as a tech-skilled professional.</li>
+                        
                     </ul>
                     <h4>Key Takeaways</h4>
                     <ul>
-                        <li>Preparation is Important - Being ready gives an edge.</li>
-                        <li>First Impressions Matter - Dress and nonverbal cues matter.</li>
-                        <li>Confidence and Calmness - Body language reduces nervousness.</li>
+                        <li>A tech background unlocks opportunities across many industries—not just IT.</li>
+                        <li>Transferable skills help you succeed in cross-functional and non-technical roles.</li>
+						<li>Public speaking, networking, and consistent learning support long-term career success.</li>
+						<li>Personal branding helps communicate your value to diverse employers.</li>
+						<li>Innovation and adaptability are essential for modern career growth.</li>
                     </ul>
                     <h4>What Was Learned</h4>
-                    <p>The session highlighted the need to prepare and present oneself professionally to make a positive impression.</p>
-                `
+                    <p>Students gained clarity on how their technical knowledge can be applied in multiple career directions. The session emphasized long-term goal-setting, continuous learning, and understanding industry needs while also presenting entrepreneurship as a viable career pathway.</p>
+                    <h4>Presented by </h4>
+                    <p>Presented by Ms. Sarmila Sivaraja - Google Women Tech makers Global Ambassador, CEO, 2SF Labs.</p>
+                
+                   
+					`
             },
             "5": {
-                title: 'Week 5 — Email Writing Skills',
+                title: 'session 5: Professionalism, HR Insights & Soft Skills for Career Success',
                 body: `
                     <h4>Session Overview</h4>
-                    <p>This session focused on composing professional emails: types, structure, and important parts to include for clear communication.</p>
-                    <h4>Key Topics Covered</h4>
+                    <p>This session with Mr. Mahinthan Subenthiran explored the expectations of HR professionals beyond technical expertise. It covered professional etiquette, corporate culture, behavioral competencies, resume crafting, interview strategies, and modern workplace trends, helping students understand how to present themselves effectively and grow in their careers.</p>
+					<h4>Key Topics Covered</h4>
                     <ul>
-                        <li>Structure of Professional Emails - Proper formatting and organization.</li>
-                        <li>Email Etiquette - Polite, clear, respectful communication practices.</li>
-                        <li>Email Purpose - Requests, thank-yous, follow-ups and their structure.</li>
-                        <li>Clarity and Tone - Adjusting tone to the recipient.</li>
-                    </ul>
+                        <li>Corporate Culture & Professional Etiquette - Aligning personal values and behavior with organizational expectations.</li>
+						<li> Behavioral Competencies - Communication, adaptability, critical thinking, and cultural fit.</li>
+						<li>Resume & Interview Skills - Crafting standout resumes and avoiding common mistakes. </li>
+						<li>Professional Presentation - Body language, public speaking, and English communication. </li>
+						<li>Work Discipline & Growth Mindset - Following company rules, continuous learning, and skill improvement. </li>
+						<li>Industry Awareness - Understanding trends like remote work, AI tools, diversity, and inclusion. </li>
+					</ul>
                     <h4>Key Takeaways</h4>
                     <ul>
-                        <li>Clear Structure is Key - Makes emails easy to read.</li>
-                        <li>Polite and Professional Tone - Maintain formality.</li>
-                        <li>Be Clear and Short - Avoid unnecessary details.</li>
-                    </ul>
+                        <li> HR evaluates candidates on technical skills, soft skills, cultural fit, and growth potential.</li>
+						<li> Strong communication, presentation, and English proficiency are crucial for professional success.</li>
+						<li>Body language and public speaking convey confidence and leadership potential. </li>
+						<li>Adhering to workplace discipline and showing a positive attitude foster career growth. </li>
+						<li> Awareness of industry trends ensures adaptability and long-term relevance.</li>
+					</ul>
+					 <h4>Resources Provided</h4>
+                    <ul>
+                       <li> Sample resumes and cover letters</li>
+					   <li>List of common HR interview questions</li>
+					</ul>
                     <h4>What Was Learned</h4>
-                    <p>The session clarified email etiquette and how to structure professional messages clearly and respectfully.</p>
-                `
+					<p>Students learned the role of HR, the importance of soft skills, professionalism, and continuous learning.</p>
+                    <h4>Presented by </h4>
+                    <p>Presented by Mr. Mahinthan Subenthiran - Group Manager - Human Resources, NU, MT, MW (SL)</p>
+                
+					`
             },
             "6": {
-                title: 'Week 6 — Professional Phone Call Etiquette',
+                title: 'session 6: Mental Well-Being and Professional Resilience',
                 body: `
                     <h4>Session Overview</h4>
-                    <p>This session covered making professional phone calls: tone, structure, common mistakes, and response strategies.</p>
-                    <h4>Key Topics Covered</h4>
+                    <p>This session with Kugashini Gunapagan, a professional counsellor, provided guidance on maintaining mental health while navigating professional pressures. It emphasized stress management, mindfulness, effective time management, and cultivating a growth mindset to support both personal and career development.</p>
+					<h4>Key Topics Covered</h4>
                     <ul>
-                        <li>Structure of Professional Phone Calls - Introduce yourself, state purpose, close politely.</li>
-                        <li>Phone Etiquette - Polite and clear communication over the phone.</li>
-                        <li>Response Strategies - Language appropriate for different call types.</li>
-                        <li>Common Mistakes to Avoid - Speaking too fast, being overly casual, or unclear.</li>
+                         <li>Stress Management & Mindfulness - Techniques to reduce anxiety and stay focused.</li>
+						 <li>Setting Boundaries - Preventing burnout by balancing work and personal life.</li>
+						 <li>Time Management & Prioritization - Strategies to manage workload efficiently.</li>
+						 <li>Resilience & Growth Mindset - Developing adaptability and a positive approach to challenges.</li>
+                         
                     </ul>
                     <h4>Key Takeaways</h4>
                     <ul>
-                        <li>Clear Communication - Articulate main points.</li>
-                        <li>Politeness is Important - Maintain a professional tone.</li>
-                        <li>Prepare in Advance - Outline main points before the call.</li>
+                        <li>Practical tools for managing stress and maintaining well-being.</li>
+						<li>Work-life balance is essential for long-term career and personal success.</li>
+						<li>Resilience and a growth mindset help navigate professional challenges.</li>
+						<li>Mindfulness practices improve focus, decision-making, and emotional regulation.</li>
+                        
                     </ul>
+					<h4>Resources Provided</h4>
+                    <ul>
+                       <li> Mindfulness and meditation app recommendations </li>
+
+						<li>Stress management worksheets</li>
+					</ul>
                     <h4>What Was Learned</h4>
-                    <p>Learned how to handle professional phone calls with proper tone, structure, and preparedness.</p>
-                `
+                    <p>Students learned techniques to manage stress, prioritize tasks, and maintain a healthy balance between work and personal life. The session emphasized that mental well-being is a critical component of professional effectiveness and career longevity.</p>
+					<h4>Presented by </h4>
+                    <p>Presented by Ms.Kugashini Gunapagan - Senior Student Counsellor at Northern Uni</p>
+                
+					`
             },
             "7": {
-                title: 'Week 7 — Dining Etiquette & Table Manners',
+                title: 'session 7: Career Pathways in Data Science',
                 body: `
                     <h4>Session Overview</h4>
-                    <p>The session highlighted professional dining etiquette, table settings, cultural differences, and proper behaviour at formal meals.</p>
-                    <h4>Key Topics Covered</h4>
+                    <p>This session with Mr. Ravichelvan focused on preparing for a career in data science. It covered key domains such as AI, machine learning, and analytics, highlighted essential technical and soft skills, and offered guidance on building projects and entering the job market as a fresh graduate.</p>
+					<h4>Key Topics Covered</h4>
                     <ul>
-                        <li>Dining Etiquette Basics - Use of utensils and table settings.</li>
-                        <li>Table Manners - Eating, talking, and making the right impression.</li>
-                        <li>Cross-Cultural Dining Practices - Understanding cultural differences.</li>
-                        <li>Common Mistakes to Avoid - Speaking with a full mouth, incorrect utensil use, etc.</li>
+                        <li>Data Science Domains - AI, Machine Learning, Data Analytics, and related fields.</li>
+						 <li>Technical & Soft Skills - Programming, statistical analysis, problem-solving, and communication.</li>
+						  <li>Project Building - Creating practical projects to demonstrate skills and experience.</li>
+						   <li>Job Market Navigation - Strategies to secure entry-level roles and internships.</li>
                     </ul>
                     <h4>Key Takeaways</h4>
                     <ul>
-                        <li>Polite Conversation - Keep topics neutral and inclusive.</li>
-                        <li>Mind Your Body Language - Sit upright and avoid phone use.</li>
-                        <li>Follow the Host’s Lead - Take cues from the host.</li>
+					 <li>Clear roadmap for developing skills and experience in data science.</li>
+					 <li>Understanding of the technical and soft skills required for early-career roles.</li>
+					 <li>Importance of building real projects to showcase competence.</li>
+					 <li>Awareness of current industry trends and market demands.</li>
+                        
                     </ul>
+					
                     <h4>What Was Learned</h4>
-                    <p>The session emphasized conversation, body language, and etiquette that influence impressions during business meals.</p>
-                `
+                    <p>Students gained insight into the data science career landscape, learned which skills are most valued by employers, and understood the importance of practical experience for entering the field.</p>
+					<h4>Personal Reflection & Growth</h4>
+                    <ul>
+                       <li> Clarity on career opportunities and pathways in data science. </li>
+						<li>Recognition of key skills needed for entry-level positions.</li>
+						<li>“I learned how to build relevant projects, understand industry trends, and prepare for a data science career as a fresh graduate.”</li>
+					</ul>
+					<h4>Presented by </h4>
+                    <p>Presented by Mr. Ravichelvan Kanagasabapathy - Teacher at Jaffna Hindu College</p>
+				`
             },
             "8": {
                 title: 'Week 8 — Emotional Intelligence',
@@ -1444,97 +1488,10 @@
                     <h4>What Was Learned</h4>
                     <p>The session showed the importance of empathy, self-control, and awareness in both personal and professional interactions.</p>
                 `
-            },
-            "9": {
-                title: 'Week 9 — Portfolio Management',
-                body: `
-                    <h4>Session Overview</h4>
-                    <p>This session covered creation, organization, and presentation of professional portfolios to showcase achievements and skills.</p>
-                    <h4>Key Topics Covered</h4>
-                    <ul>
-                        <li>Introduction to Portfolios – Types and purposes.</li>
-                        <li>Design Principles – Layout, structure, presentation.</li>
-                        <li>Putting Work in Order – Choosing quality pieces.</li>
-                        <li>Professional Presentation – Visual coherence and polish.</li>
-                    </ul>
-                    <h4>Key Takeaways</h4>
-                    <ul>
-                        <li>Smart Selection – Choose work aligned with goals.</li>
-                        <li>Visual Consistency – Maintain a polished look.</li>
-                        <li>Reflective Insight – Explain reasoning and learning for each piece.</li>
-                    </ul>
-                    <h4>What Was Learned</h4>
-                    <p>Learned to design and present an organized, professional portfolio that highlights quality work and learning.</p>
-                `
-            },
-            "10": {
-                title: 'Week 10 — Writing & Identifying Abstracts',
-                body: `
-                    <h4>Session Overview</h4>
-                    <p>This session focused on abstracts: their purpose in research articles and how to write concise, informative summaries.</p>
-                    <h4>Key Topics Covered</h4>
-                    <ul>
-                        <li>Abstract Structure – Background, objectives, methods, results, conclusions.</li>
-                        <li>Writing Techniques – Concise, clear, informative abstracts.</li>
-                        <li>Identifying Key Elements – Extracting essential facts from articles.</li>
-                        <li>Abstract Types – Descriptive vs informative abstracts.</li>
-                    </ul>
-                    <h4>Key Takeaways</h4>
-                    <ul>
-                        <li>Short and Clear – Keep abstracts within recommended length.</li>
-                        <li>Clarity – Use simple language and avoid jargon.</li>
-                        <li>Completeness – Include all crucial research information.</li>
-                    </ul>
-                    <h4>What Was Learned</h4>
-                    <p>Practised dissecting articles and writing concise abstracts; learned the role of keywords for retrieval.</p>
-                `
-            },
-            "11": {
-                title: 'Week 11 — Meeting Terminology & Conduct',
-                body: `
-                    <h4>Session Overview</h4>
-                    <p>This session covered meeting vocabulary, running effective meetings, and confident participation with a practical Vetrak Club activity.</p>
-                    <h4>Key Topics Covered</h4>
-                    <ul>
-                        <li>Meeting Words – Agenda, minutes, action items, quorum, consensus.</li>
-                        <li>Running Good Meetings – Organizing and directing productive meetings.</li>
-                        <li>Confident Participation – Techniques to speak up and contribute.</li>
-                        <li>Meeting Practice – Role-play: "Vetrak Club New Member Selection."</li>
-                    </ul>
-                    <h4>Key Takeaways</h4>
-                    <ul>
-                        <li>Understanding the Terminology – Know common meeting terms.</li>
-                        <li>Effective Communication – Use concise, formal language.</li>
-                        <li>Building Confidence – Techniques to overcome shyness and contribute.</li>
-                        <li>Meeting Rules – Know how to join, participate, and close meetings properly.</li>
-                    </ul>
-                    <h4>What Was Learned</h4>
-                    <p>Applied meeting vocabulary and learned to lead/participate in meetings; role-play gave practical experience.</p>
-                `
-            },
-            "12": {
-                title: 'Week 12 — Food Fiesta Week',
-                body: `
-                    <h4>Session Overview</h4>
-                    <p>Our Team Cheems cooked up a special food festival to showcase and celebrate our teamwork, communication and leadership skills.</p>
-                    <h4>Key Topics Covered</h4>
-                    <ul>
-                        <li>Team Communication – Assigning roles and responsibilities for prep and service.</li>
-                        <li>Leadership Skills – Planning and execution responsibilities.</li>
-                        <li>Event Organization – From planning to execution.</li>
-                        <li>Cooking Presentation – Showcasing hero dishes like kothu, samosa, sarbath, and donuts.</li>
-                    </ul>
-                    <h4>Key Takeaways</h4>
-                    <ul>
-                        <li>Teamwork – Success depends on good collaboration.</li>
-                        <li>Responsibility – Own tasks and execute them well.</li>
-                        <li>Creativity – Apply creativity in presentation and service.</li>
-                        <li>Communication – Efficient communication throughout planning and execution.</li>
-                    </ul>
-                    <h4>What Was Learned</h4>
-                    <p>Learned how to divide work, communicate under pressure, adapt to setbacks, and deliver excellent presentation and customer service.</p>
-                `
             }
+           
+          
+           
         };
 
         // Create modal element and append to body
